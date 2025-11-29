@@ -126,5 +126,36 @@ public class Main {
         System.out.println("Contraseña correcta. Acceso concedido.");
 
         // Mantener scanner abierto para ejercicios posteriores (se cerrará al final)
+        
+        // Ejercicios: FOR
+        System.out.println("\n--- FOR: imprimir números pares del 2 al 20 ---");
+        for (int p = 2; p <= 20; p += 2) {
+            System.out.println(p);
+        }
+
+        System.out.println("\n--- FOR: calcular factorial de un número ingresado ---");
+        System.out.print("Ingrese un entero no negativo para factorial: ");
+        int m = 0;
+        if (sc.hasNextInt()) {
+            m = sc.nextInt();
+        } else {
+            sc.next();
+        }
+        if (m < 0) {
+            System.out.println("Valor inválido (negativo). No se puede calcular factorial.");
+        } else {
+            long fact = 1L;
+            for (int t = 2; t <= m; t++) {
+                fact *= t;
+            }
+            System.out.println(m + "! = " + fact);
+        }
+
+        System.out.println("\n--- FOR: sumar elementos de un arreglo usando contador ---");
+        int sumaArray = 0;
+        for (int j = 0; j < sampleArray.length; j++) {
+            sumaArray += sampleArray[j];
+        }
+        System.out.println("Suma de elementos del arreglo = " + sumaArray);
     }
 }
