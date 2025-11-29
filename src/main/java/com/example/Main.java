@@ -67,5 +67,64 @@ public class Main {
         if (!found) {
             System.out.println("Número " + target + " no encontrado en el arreglo.");
         }
+        
+        // Ejercicios: DO-WHILE
+        System.out.println("\n--- DO-WHILE: menú interactivo (se muestra al menos una vez) ---");
+        int opcion;
+        do {
+            System.out.println("Menú:\n1) Saludar\n2) Mostrar arreglo de palabras\n0) Salir");
+            System.out.print("Elija una opción: ");
+            if (sc.hasNextInt()) {
+                opcion = sc.nextInt();
+            } else {
+                sc.next();
+                opcion = -1;
+            }
+            if (opcion == 1) {
+                System.out.println("¡Hola! Esta es la opción Saludar.");
+            } else if (opcion == 2) {
+                System.out.println("Contenido del arreglo de palabras:");
+                for (String w : words) {
+                    System.out.println("- " + w);
+                }
+            } else if (opcion == 0) {
+                System.out.println("Saliendo del menú.");
+            } else {
+                System.out.println("Opción inválida.");
+            }
+        } while (opcion != 0);
+
+        System.out.println("\n--- DO-WHILE: leer números hasta ingresar 0 y mostrar suma acumulada ---");
+        int valor;
+        int acumulado = 0;
+        do {
+            System.out.print("Ingrese un número (0 para terminar): ");
+            if (sc.hasNextInt()) {
+                valor = sc.nextInt();
+            } else {
+                sc.next();
+                valor = 0;
+            }
+            if (valor != 0) {
+                acumulado += valor;
+            }
+        } while (valor != 0);
+        System.out.println("Suma acumulada = " + acumulado);
+
+        // Consumir posible salto de línea antes de leer contraseñas con nextLine
+        sc.nextLine();
+        System.out.println("\n--- DO-WHILE: validación de contraseña (repite hasta acertar) ---");
+        String contraseñaCorrecta = "abc123";
+        String intento;
+        do {
+            System.out.print("Ingrese la contraseña: ");
+            intento = sc.nextLine();
+            if (!intento.equals(contraseñaCorrecta)) {
+                System.out.println("Contraseña incorrecta. Intente de nuevo.");
+            }
+        } while (!intento.equals(contraseñaCorrecta));
+        System.out.println("Contraseña correcta. Acceso concedido.");
+
+        // Mantener scanner abierto para ejercicios posteriores (se cerrará al final)
     }
 }
