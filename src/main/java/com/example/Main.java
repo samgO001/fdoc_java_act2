@@ -157,5 +157,27 @@ public class Main {
             sumaArray += sampleArray[j];
         }
         System.out.println("Suma de elementos del arreglo = " + sumaArray);
+
+        // Ejercicios: FOR-EACH
+        System.out.println("\n--- FOR-EACH: sumar arreglo de enteros (for-each) ---");
+        int sumaForEach = 0;
+        for (int val : sampleArray) {
+            sumaForEach += val;
+        }
+        System.out.println("Suma (for-each) = " + sumaForEach);
+
+        System.out.println("\n--- FOR-EACH: listar palabras de colección predefinida ---");
+        for (String w : words) {
+            System.out.println(w);
+        }
+
+        System.out.println("\n--- FOR-EACH: promedio de calificaciones (2 decimales) ---");
+        double[] grades = {7.5, 8.0, 6.25, 9.0};
+        double totalGrades = 0.0;
+        for (double g : grades) {
+            totalGrades += g;
+        }
+        double promedio = grades.length > 0 ? totalGrades / grades.length : 0.0;
+        System.out.println(String.format("Promedio = %.2f", promedio));
     }
 }
